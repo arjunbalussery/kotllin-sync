@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://postgres:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: pass123
+    hikari:
+      idle-timeout: 10000
+      minimumIdle: 10  # default
+      maximumPoolSize: 20  #default
+
+  flyway:
+    baseline-on-migration: true
+    url: jdbc:postgresql://postgres:5432/postgres
+    location: classpath:db/migration
+    user: postgres
+    password: pass123
